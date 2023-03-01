@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Bookshop</title>
+		<!-- Custom CSS file -->
+		<link rel="stylesheet" type="text/css" href="base.css">
+
+
+
+		<!-- Bootstrap CDN link -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	
+		<!-- JQuery CDN link -->
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	</head>
+	<body>
+		<div>
+			<div>
+				<nav class="nav text-uppercase">
+					<ul>
+						<li><a href="index.html" id="home">BookShop</a></li>
+						<li><a href="index.html">home</a></li>
+						<li><a href="#about">about</a></li>
+						<li><a href="#contact">contact</a></li>
+						<li><a href="#" id="adminbtn">admin</a></li>
+						<div class="nav-right">
+							<li class="dropdown"><a href="#" class="dropbtn dropdown-toggle" data-bs-toggle="dropdown" id="profilebtn">profile</a>
+								<div class="dropdown-profile">
+									<a href="#" id="profile-btn">Change Profile</a>
+									<a data-toggle="modal" href="#usernameModal" id="usernamebtn">Change Username</a>
+									<a data-toggle="modal" href="#passwordModal" id="passwordbtn">Change Password</a>
+								</div>
+							</li>
+							<li><a data-toggle="modal" href="#loginModal">login</a></li>
+							<li><a data-toggle="modal" href="#registerModal">register</a></li>
+							<li><a href="#" id="logoutbtn">logout</a></li>
+						</div>
+					</ul>
+				</nav>
+				<div class="welcomeImage">
+					<img src="images/library.jpg">
+				</div>
+			</div>
+
+			<div class="username-modal">
+				<div class="modal fade" id="usernameModal">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header text-center">
+								<h1 class="modal-title w-100">Change Username</h1>
+								<button type="button" data-dismiss="modal" class="btn close">X</button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<label for="username" class="form-text">Username</label>
+									<input type="text" name="username" id="username" class="form-control">
+								</form><br>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button class="btn btn-success" >Submit</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="password-modal">
+				<div class="modal fade" id="passwordModal">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header text-center">
+								<h1 class="modal-title w-100">Change Password</h1>
+								<button type="button" data-dismiss="modal" class="btn close">X</button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<label for="oldpass" class="form-text">Old Password</label>
+									<input type="password" name="oldpass" id="oldpass" class="form-control">
+									<label for="newpass1" class="form-text">New Password</label>
+									<input type="password" name="newpass1" id="newpass1" class="form-control">
+									<label for="newpass2" class="form-text">Confirm Password</label>
+									<input type="password" name="newpass2" id="newpass2" class="form-control">
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button class="btn btn-success" >Submit</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="login-modal">
+				<div class="modal fade" id="loginModal">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header text-center">
+								<h1 class="modal-title w-100">Login</h1>
+								<button type="button" data-dismiss="modal" class="btn close">X</button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<label for="username" class="form-text">Username</label>
+									<input type="text" name="username" id="username" class="form-control">
+
+									<label for="pass" class="form-text">Password</label>
+									<input type="password" name="pass" id="pass" class="form-control">
+								</form><br>
+								<a data-toggle="modal" href="#registerModal" data-dismiss="modal">Want to create account?</a>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button class="btn btn-success" >Submit</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="register-modal">
+				<div class="modal fade" id="registerModal">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header text-center">
+								<h1 class="modal-title w-100">Register</h1>
+								<button type="button" data-dismiss="modal" class="btn close">X</button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<label for="username" class="form-text">Username</label>
+									<input type="text" name="username" id="username" class="form-control">
+
+									<label for="email" class="form-text">Email</label>
+									<input type="email" name="email" id="email" class="form-control">
+
+									<label for="pass1" class="form-text">Password</label>
+									<input type="password" name="pass1" id="pass1" class="form-control">
+
+									<label for="pass2" class="form-text">Confirm Password</label>
+									<input type="password" name="pass2" id="pass2" class="form-control">
+								</form><br>
+								<a data-toggle="modal" href="#loginModal" data-dismiss="modal">Already have an account?</a>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button class="btn btn-success" >Submit</button>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- About content -->
+			<div class="container" id="about">
+				<h1>welcome to the books world</h1>
+				<p>
+					Here you'll get every type of books and you are going to love this world, Because this world is going to fullfill you wishes of books.
+					Hope you enjoy in this world and take some books to your world with you.
+						Here you'll get every type of books and you are going to love this world, Because this world is going to fullfill you wishes of books.
+					Hope you enjoy in this world and take some books to your world with you.
+						Here you'll get every type of books and you are going to love this world, Because this world is going to fullfill you wishes of books.
+					Hope you enjoy in this world and take some books to your world with you.
+						Here you'll get every type of books and you are going to love this world, Because this world is going to fullfill you wishes of books.
+					Hope you enjoy in this world and take some books to your world with you.
+						Here you'll get every type of books and you are going to love this world, Because this world is going to fullfill you wishes of books.
+					Hope you enjoy in this world and take some books to your world with you.
+						Here you'll get every type of books and you are going to love this world, Because this world is going to fullfill you wishes of books.
+					Hope you enjoy in this world and take some books to your world with you.
+						Here you'll get every type of books and you are going to love this world, Because this world is going to fullfill you wishes of books.
+					Hope you enjoy in this world and take some books to your world with you.
+				</p>
+			
+				<div id="list-th">
+	      	<div class="book read">
+	       		<div class="cover">
+	          	<img src="https://s-media-cache-ak0.pinimg.com/564x/f9/8e/2d/f98e2d661445620266c0855d418aab71.jpg">
+	        	</div>
+	        	<div class="description">
+	          	<p class="title">Frankenstein<br>
+	            	<span class="author">Mary Shelley</span>
+	            </p>
+	        	</div>
+	      	</div>
+		      <div class="book read">
+		        <div class="cover">
+		          <img src="https://alysbcohen.files.wordpress.com/2015/01/little-princess-book-cover.jpg">
+		        </div>
+		        <div class="description">
+		          <p class="title">A Little Princess<br>
+		            <span class="author">Frances Hodgson Burnett</span>
+		          </p>
+		        </div>
+		      </div>
+		      <div class="book unread">
+		        <div class="cover">
+		          <img src="http://www.publishersweekly.com/images/data/ARTICLE_PHOTO/photo/000/028/28129-1.JPG">
+		        </div>
+		        <div class="description">
+		          <p class="title">Roughing It</br>
+		            <span class="author">Mark Twain</span></p>
+		        </div>
+		      </div>
+					<div class="book read">
+	        	<div class="cover">
+	          	<img src="http://d.gr-assets.com/books/1414348859l/23209971.jpg">
+	        	</div>
+	        	<div class="description">
+	          	<p class="title">Girl at War</br>
+	            	<span class="author">Sara Novic</span></p>
+	        	</div>
+	      	</div>
+	    	</div>
+    	</div>
+			<div id="contact" class="contact-container">
+				<div class="contact-image">
+					<img>
+					<h2 class="text-uppercase">Contact</h2>
+				</div>
+			</div>
+
+			<div class="container contact">
+				<div class="contact-head">
+					<h3>where i work</h3>
+					<p>i'd love your feedback</p>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 col-md-6">
+						<div class="row">
+						</div>
+						<div class="row">
+							<div class="contactMe">
+								<p>Ahmedabad, India</p>
+								<p>Phone: +918160539988</p>
+								<p>Email: bookshop@gmail.com</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-6">
+						<div class="contactForm">
+							<form>
+								<label></label>
+								<input type="text" placeholder="Your Name" name="name" id="name" class="form-control">
+								<label></label>
+								<input class="form-control" type="email" name="email" placeholder="Your Email" id="email">
+								<label></label>
+								<input class="form-control" type="text" name="message" id="message" placeholder="Message">
+								<label></label>
+								<div class="row">
+									<div class="col-sm-12 col-md-6">
+									</div>
+									<div class="col-sm-12 col-md-6">
+										<input class="form-control btn btn-success" type="submit" id="submit" value="Send Message">
+									</div>
+								</div>
+							</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<a href="#home">Back to Top</a>
+		</div>
+		<!-- Bootstrap Js file for class functions -->
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+    </script>
+    <!-- Custome Jquery file -->
+		<script type="text/javascript" src="base.js"></script>
+	</body>
+</html>
