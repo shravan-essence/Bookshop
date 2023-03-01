@@ -1,0 +1,162 @@
+.nav ul{
+	list-style: none;
+	padding:0;
+	margin-top: 10px;
+	position: absolute;
+	width: 100%;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	text-decoration: none;
+	color: white;
+	padding: 20px 20px;
+	font-weight: bolder; :
+}
+
+ul .nav-right {
+ 	float: right;
+}
+
+.dropdown-profile a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-profile {
+	display: none;
+	position: absolute;
+	min-width: 200px;
+	z-index: 1;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown:hover .dropdown-profile {
+	display: block;
+}
+
+.dropdown-profile a:hover {
+	background-color: black;
+	color: white;
+}
+
+li:not(:first-child) a:hover {
+	color: white;
+	background-color: black;
+	opacity: 0.8;
+}
+
+.modal .modal-body a {
+	text-decoration: none;
+	color: red;
+}
+
+.welcomeImage img {
+	width: 100%;
+}
+
+.container {
+	margin:40px;
+}
+.container h1,h3 {
+	text-align: center;
+	text-transform: uppercase;
+	margin: 30px;
+}
+
+.contact-container {
+	margin-top: 150px;
+}
+
+.contact-image {
+  padding: 100px;
+  width: 100%;
+	background-image: url('images/contact.jpg');
+	text-align: center;	
+	color: white;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.contact {
+	margin: 100px;
+	padding:0 50px ;
+}
+
+.contact-head {
+	text-align: center;
+	padding: 50px;
+}
+
+.contactMe p:first-child {
+	margin-top: 50px;
+}
+
+.footer {
+	background-color: black;
+	padding: 50px;
+	text-align: center;
+
+}
+
+.footer a {
+	text-align: center;
+	text-decoration: none;
+	padding: 12px 30px;
+	background-color: white;
+	color: black;
+
+} 
+
+.book {
+  display: inline-block;
+  width: 230px;
+  height: 390px;
+  box-shadow: 0 0 20px #aaa;
+  margin: 25px;
+  padding: 10px 10px 0 10px;
+  vertical-align: top;
+  transition: height 1s;
+}
+
+.cover {
+  border: 2px solid gray;
+  height: 80%;
+  overflow: hidden;
+}
+
+.cover img {
+  width: 100%;
+}
+
+.book p {
+  margin-top: 12px;
+  font-size: 20px;
+}
+
+.book .author {
+  font-size: 15px;
+}
+@media (max-width: 941px) {
+  .container {
+    max-width: 700px;
+  }
+  .book {
+    margin: 49px;
+  }
+}
+@media (max-width: 730px) {
+  .book {
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  .cover {
+    
+  }
+}
