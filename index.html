@@ -12,13 +12,18 @@
 	
 		<!-- JQuery CDN link -->
 		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+		<!--JQuery validation CDN links-->
+		<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>	
+		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 	</head>
 	<body>
 		<div>
 			<div>
 				<nav class="nav text-uppercase" id="container">
 					<ul>
-						<li><a href="index.html" id="home">BookShop</a></li>
+						<li><a href="index.html" >BookShop</a></li>
 						<li><a href="index.html">home</a></li>
 						<li><a href="#about">about</a></li>
 						<li><a href="#contact">contact</a></li>
@@ -31,13 +36,13 @@
 									<a data-toggle="modal" href="#passwordModal" id="passwordbtn">Change Password</a>
 								</div>
 							</li>
-							<li><a data-toggle="modal" href="#loginModal">login</a></li>
-							<li><a data-toggle="modal" href="#registerModal">register</a></li>
+							<li><a data-toggle="modal" href="#loginModal" id="login">login</a></li>
+							<li><a data-toggle="modal" href="#registerModal" id="register">register</a></li>
 							<li><a href="#" id="logoutbtn">logout</a></li>
 						</div>
 					</ul>
 				</nav>
-				<div class="welcomeImage">
+				<div class="welcomeImage" id="home">
 					<img src="images/library.jpg">
 				</div>
 			</div>
@@ -101,18 +106,19 @@
 								<button type="button" data-dismiss="modal" class="btn close">X</button>
 							</div>
 							<div class="modal-body">
-								<form>
+								<form id="loginForm" method="POST" action="index.html">
 									<label for="username" class="form-text">Username</label>
-									<input type="text" name="username" id="username" class="form-control">
+									<input type="text" name="username" id="username" class="form-control"><br>
 
 									<label for="pass" class="form-text">Password</label>
-									<input type="password" name="pass" id="pass" class="form-control">
-								</form><br>
+									<input type="password" name="pass" id="pass" class="form-control"><br>
+								
 								<a data-toggle="modal" href="#registerModal" data-dismiss="modal">Want to create account?</a>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								<button class="btn btn-success" >Submit</button>
+								<button type="submit" class="btn btn-success" id="loginBtn">Submit</button>
+								</form><br>
 							</div>
 						</div>
 					</div>
@@ -128,24 +134,25 @@
 								<button type="button" data-dismiss="modal" class="btn close">X</button>
 							</div>
 							<div class="modal-body">
-								<form>
+								<form id="registerForm">
 									<label for="username" class="form-text">Username</label>
-									<input type="text" name="username" id="username" class="form-control">
+									<input type="text" name="username" id="username" class="form-control"><br>
 
 									<label for="email" class="form-text">Email</label>
-									<input type="email" name="email" id="email" class="form-control">
+									<input type="email" name="email" id="email" class="form-control"><br>
 
 									<label for="pass1" class="form-text">Password</label>
-									<input type="password" name="pass1" id="pass1" class="form-control">
+									<input type="password" name="pass1" id="pass1" class="form-control"><br>
 
 									<label for="pass2" class="form-text">Confirm Password</label>
-									<input type="password" name="pass2" id="pass2" class="form-control">
-								</form><br>
+									<input type="password" name="pass2" id="pass2" class="form-control"><br>
+								
 								<a data-toggle="modal" href="#loginModal" data-dismiss="modal">Already have an account?</a>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								<button class="btn btn-success" >Submit</button>
+								<button type="submit" class="btn btn-success" id="registerBtn" >Submit</button>
+								</form><br>
 								
 							</div>
 						</div>
@@ -269,18 +276,35 @@
 		<script type="text/javascript" src="base.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
-    		$(document).scroll(function () {
-        	var scroll = $(this).scrollTop();
-       		var topDist = $("#container").position();
-        	if (scroll > 20) {
-            $('nav ul').css({
-            	"position":"fixed",
-            	"top":"0"
-            });
-            $('nav li a').css({"background-color":"white","color":"black"});
-        	} 
-        	
-    		});
+	    		$(document).scroll(function () {
+		        	var scroll = $(this).scrollTop();
+		       		var topDist = $("#container").position();
+		        	if (scroll > 20) {
+			          $('nav ul').css({
+			          	"position":"fixed",
+			            "top":"-10px",
+			            "padding":"10px 10px",
+			            "background-color":"white",
+			           
+			          });
+			          $('ul li a').css({
+			          	"color":"black",
+			          });
+								$("ul li a").hover(function(){
+  								$(this).css({
+  									"background-color": "black",
+  									"color":"white",
+  									"opacity":"0.8"
+  									});
+  							}, function(){
+  								$(this).css({
+  									"background-color":"white",
+  									"color":"black"
+  								});
+								});
+		        	} 
+		        	
+	    		});
 			});
 		</script>
 	</body>

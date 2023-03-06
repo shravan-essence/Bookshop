@@ -20,7 +20,7 @@ li {
 li a {
 	text-decoration: none;
 	color: white;
-	padding: 20px 20px;
+	padding: 10px 10px;
 	font-weight: bolder; 
 }
 
@@ -60,9 +60,25 @@ li:not(:first-child) a:hover {
 
 .modal .modal-body a {
 	text-decoration: none;
-	color: red;
+	color: white;
+}
+body.modal-open {
+  overflow-y: hidden;
 }
 
+.register-modal .modal-content{
+	background-color: skyblue;
+	color: white;
+}
+
+.login-modal .modal-content{
+	background-color: skyblue;
+	color: white;
+}
+
+.error {
+	color: red;
+}
 .welcomeImage img {
 	width: 100%;
 }
@@ -167,3 +183,4 @@ li:not(:first-child) a:hover {
     
   }
 }
+
